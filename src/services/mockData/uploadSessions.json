@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+"file": {
+      "id": "file_001",
+      "name": "presentation.pdf",
+      "size": 2048576,
+      "type": "application/pdf",
+      "preview": null,
+      "status": "completed",
+      "progress": 100,
+      "uploadedAt": "2024-01-15T10:30:00.000Z",
+      "error": null
+    },
+    "totalSize": 3072576,
+    "completedCount": 2,
+    "startedAt": "2024-01-15T10:29:45.000Z",
+    "completedAt": "2024-01-15T10:31:15.000Z"
+  },
+  {
+    "Id": 2,
+"file": {
+      "id": "file_003",
+      "name": "video_demo.mp4",
+      "size": 15728640,
+      "type": "video/mp4",
+      "preview": null,
+      "status": "completed",
+      "progress": 100,
+      "uploadedAt": "2024-01-15T14:22:30.000Z",
+      "error": null
+    },
+    "totalSize": 15728640,
+    "completedCount": 1,
+    "startedAt": "2024-01-15T14:20:00.000Z", 
+    "completedAt": "2024-01-15T14:22:30.000Z"
+  },
+  {
+    "Id": 3,
+"file": {
+      "id": "file_004",
+      "name": "report.docx",
+      "size": 512000,
+      "type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "preview": null,
+      "status": "error",
+      "progress": 45,
+      "uploadedAt": null,
+      "error": "Network connection lost during upload"
+    },
+    "totalSize": 1280000,
+    "completedCount": 1,
+    "startedAt": "2024-01-15T16:42:00.000Z",
+    "completedAt": null
+  }
+]
