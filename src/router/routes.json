@@ -1,0 +1,87 @@
+{
+  "/": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Upload functionality requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/login": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Login page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  },
+  "/signup": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Signup page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  },
+  "/callback": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Callback page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  },
+  "/error": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Error page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  },
+  "/prompt-password/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Prompt password page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  },
+  "/reset-password/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Reset password page is public",
+            "rule": "public"
+          }
+        ]
+      }
+    }
+  }
+}

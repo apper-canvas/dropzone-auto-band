@@ -1,7 +1,19 @@
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { useAuth } from "@/layouts/Root";
+import React from "react";
 import ApperIcon from "@/components/ApperIcon";
+import DropZone from "@/components/molecules/DropZone";
+import Button from "@/components/atoms/Button";
 
 const Header = () => {
+  const { user, isAuthenticated } = useSelector(state => state.user);
+  const { logout } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -43,14 +55,32 @@ const Header = () => {
               </div>
             </div>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-              title="Help & Information"
-            >
-              <ApperIcon name="HelpCircle" className="w-5 h-5" />
-            </motion.button>
+            {/* User Actions */}
+            {isAuthenticated && user ? (
+              <div className="flex items-center space-x-3">
+                <div className="hidden sm:block text-sm text-gray-700">
+                  Welcome, <span className="font-medium">{user.firstName || user.name || 'User'}</span>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleLogout}
+                  className="flex items-center space-x-1"
+                >
+                  <ApperIcon name="LogOut" className="w-4 h-4" />
+                  <span>Logout</span>
+                </Button>
+              </div>
+            ) : (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                title="Help & Information"
+              >
+                <ApperIcon name="HelpCircle" className="w-5 h-5" />
+              </motion.button>
+            )}
           </div>
         </div>
       </div>
